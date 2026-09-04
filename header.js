@@ -45,11 +45,11 @@
   header.className = "tc-header";
   header.innerHTML = `
     <div>
-      <a href="${HOME_URL}" class="tc-header__name">Tim Cieplowski</a><span class="tc-header__title">Software Developer</span>
+      <a href="${HOME_URL}" class="tc-header__name">Tim Cieplowski</a><span class="tc-header__title">Software Developer &middot; Madison, WI</span>
     </div>
     <nav class="tc-header__links">
       <a href="${HOME_URL}#projects">Projects</a>
-      <a href="mailto:timteachesmath@gmail.com">Email</a>
+      <a href="mailto:timteachesmath+portfolio@gmail.com">Email</a>
       <a href="https://linkedin.com/in/tim-cieplowski" target="_blank" rel="noopener">LinkedIn</a>
     </nav>
   `;

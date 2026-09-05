@@ -16,6 +16,9 @@
       font-size: 0.9rem;
       border-bottom: 1px solid #1e293b;
       box-sizing: border-box;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
     .tc-header a {
       color: inherit;

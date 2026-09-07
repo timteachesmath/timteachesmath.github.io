@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Tim Cieplowski - Creative Coding</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      background: #0f172a;
+      color: #f1f5f9;
+      max-width: 680px;
+      margin: 0;
+      padding: 0 1rem;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+    }
+
+    h2 {
+      font-size: 1.15rem;
+      margin-top: 2.5rem;
+    }
+
+    #status {
+      color: #94a3b8;
+    }
+
+    ol {
+      padding-left: 1.5rem;
+    }
+
+    li {
+      margin: 0.25rem 0;
+    }
+
+    /* Default link colours are unreadable on this background, so links get an
+       explicit class. The underline is a transparent bottom border that gains
+       colour on hover, which avoids the 1px text shift that toggling
+       text-decoration causes. */
+    .link {
+      color: #38bdf8;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: color 0.15s ease, border-color 0.15s ease;
+    }
+
+    .link:hover {
+      color: #7dd3fc;
+      border-bottom-color: currentColor;
+    }
+
+    .link:visited {
+      color: #c4b5fd;
+    }
+
+    /* Keyboard users need a visible focus ring; :focus-visible shows it for
+       tab navigation without flashing it on every mouse click. */
+    .link:focus-visible {
+      outline: 2px solid #38bdf8;
+      outline-offset: 2px;
+      border-radius: 2px;
+    }
+
+    /* Marks links that leave the site, so opening a new tab isn't a surprise. */
+    .link-external::after {
+      content: " ↗";
+      font-size: 0.85em;
+      color: #94a3b8;
+    }
+
+    .desc {
+      margin: 0.2rem 0 0;
+      color: #94a3b8;
+      font-size: 0.9rem;
+      line-height: 1.45;
+    }
+
+    .item-list {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .item-list li {
+      margin: 0 0 1.1rem;
+    }
+  </style>
+</head>
+
+<body>
+  <script src="https://timteachesmath.github.io/header.js" defer></script>
+
+  <h1>Creative Coding Examples Made With P5.js</h1>
+  <h2> Animated GIFs</h2>
+  <ul class="item-list">
+    <li>
+      <a class="link link-external" target="_blank" rel="noopener"
+        href="https://timteachesmath.blogspot.com/2022/08/rep-tile.html">Rep-tile</a>
+      <p class="desc">A rep-tile is a shape that can be dissected into smaller copies of itself. The animation
+        walks through that subdivision, so every generation is the same form at a smaller scale.</p>
+    </li>
+    <li>
+      <a class="link link-external" target="_blank" rel="noopener"
+        href="https://timteachesmath.blogspot.com/2020/11/swirled-series.html">Swirled Series</a>
+      <p class="desc">Three pieces submitted to Craig Kaplan's Swirled Series, each morphing a checkerboard pattern with at most 180 frames.</p>
+    </li>
+  </ul>
+  <h2>Applets</h2>
+  <ul class="item-list">
+    <li>
+      <a class="link link-external" target="_blank" rel="noopener"
+        href="https://editor.p5js.org/timteachesmath/full/omRf8cqV7">Board Game</a>
+      <p class="desc">Quick implementation of a two-player board game, the game 3n Plus Fun developed by Anna Pierrehumbert to illustrate the Collatz Conjecture. </p>
+    </li>
+    <li>
+      <a class="link link-external" target="_blank" rel="noopener"
+        href="https://editor.p5js.org/timteachesmath/full/J9Jz1hOue">Quick Color Puzzle</a>
+      <p class="desc">A playable pour-and-sort puzzle, the same game the Color Puzzle Solver on the
+        projects page solves automatically.</p>
+    </li>
+  </ul>
+</body>
+
+</html>

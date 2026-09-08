@@ -1,0 +1,352 @@
+/* Shared styles for timteachesmath.github.io and the project pages that link
+   it (the Color Puzzle Solver, the Zingo fairness page). This file is the one
+   copy — the other repos pull it cross-origin the same way they already pull
+   header.js — so a change here lands on every page at once.
+
+   What belongs here: design tokens, base typography, and any component used
+   on more than one page. Anything that exists on exactly one page stays in
+   that page. */
+
+:root {
+  /* Palette. Slate-family, so anything added later (a warning colour, a new
+     accent) has an obvious neighbour to pick from. */
+  --bg: #0f172a;
+  --surface: #1e293b;
+  --surface-soft: #1e293b22;
+  --surface-soft-hover: #1e293b55;
+  --border: #1e293b;
+  --border-strong: #334155;
+
+  --text: #f1f5f9;
+  --text-soft: #cbd5e1;
+  --muted: #94a3b8;
+  --dim: #64748b;
+
+  --accent: #38bdf8;
+  --accent-hover: #7dd3fc;
+  --accent-visited: #c4b5fd;
+  --action: #0ea5e9;
+
+  --success: #34d399;
+  --warn: #fbbf24;
+  --danger: #f87171;
+
+  /* Layout. A page that needs a wider column (a chart, a wide table)
+     overrides --measure on :root, not on .page, so the header — which is
+     capped by the same token — stays aligned with the content under it. */
+  --measure: 720px;
+  --gutter: 1rem;
+  --radius: 0.5rem;
+  --radius-sm: 0.375rem;
+
+  --font: system-ui, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* Gives native controls — textareas, scrollbars, focus rings — the dark
+     treatment without each page restyling them. */
+  color-scheme: dark;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  line-height: 1.5;
+}
+
+/* The header spans the viewport, so the reading column is a wrapper inside
+   body rather than a max-width on body itself. */
+.page {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 0 var(--gutter) 3rem;
+}
+
+/* ---- Type ---------------------------------------------------------- */
+
+/* One fluid step for h1 covers both the narrow project pages and the wide
+   ones without a per-page override. */
+h1 {
+  font-size: clamp(1.5rem, 1.1rem + 1.6vw, 2rem);
+  line-height: 1.2;
+  margin-top: 2.5rem;
+}
+
+h2 {
+  font-size: 1.15rem;
+  margin-top: 2.5rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.5rem;
+}
+
+h3 {
+  font-size: 1.05rem;
+}
+
+p {
+  color: var(--text-soft);
+}
+
+/* The opening paragraph under an h1. */
+.lede {
+  color: var(--muted);
+  font-size: 1.1rem;
+  max-width: 60ch;
+  margin: 0.5rem 0 0;
+}
+
+ol,
+ul {
+  padding-left: 1.5rem;
+}
+
+li {
+  margin: 0.25rem 0;
+}
+
+/* ---- Links --------------------------------------------------------- */
+
+/* Default link colours are unreadable on this background. The underline is a
+   transparent bottom border that gains colour on hover, which avoids the 1px
+   text shift that toggling text-decoration causes. */
+a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+a:hover {
+  color: var(--accent-hover);
+  border-bottom-color: currentColor;
+}
+
+a:visited {
+  color: var(--accent-visited);
+}
+
+/* Keyboard users need a visible focus ring; :focus-visible shows it for tab
+   navigation without flashing it on every mouse click. */
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Marks links that leave the site, so opening a new tab isn't a surprise. */
+.link-external::after {
+  content: " ↗";
+  font-size: 0.85em;
+  color: var(--muted);
+}
+
+/* ---- Header (markup comes from header.js) -------------------------- */
+
+.tc-header {
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  font-size: 0.9rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.tc-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 0.75rem var(--gutter);
+}
+
+.tc-header a {
+  color: inherit;
+  border-bottom: 0;
+}
+
+.tc-header a:visited {
+  color: inherit;
+}
+
+.tc-header a:hover {
+  color: var(--text);
+  text-decoration: underline;
+}
+
+.tc-header__name {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.tc-header__title {
+  color: var(--muted);
+  font-weight: 400;
+  margin-left: 0.5rem;
+}
+
+.tc-header__links {
+  display: flex;
+  gap: 1rem;
+  color: var(--muted);
+}
+
+/* ---- Cards --------------------------------------------------------- */
+
+.card-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.card {
+  display: block;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  text-decoration: none;
+  color: inherit;
+  background: var(--surface-soft);
+}
+
+.card:visited {
+  color: inherit;
+}
+
+.card:hover {
+  color: inherit;
+  border-color: var(--border-strong);
+  background: var(--surface-soft-hover);
+}
+
+.card h3 {
+  margin: 0 0 0.35rem;
+  color: var(--text);
+}
+
+.card p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.tags {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--dim);
+}
+
+/* ---- Lists of linked items with descriptions ----------------------- */
+
+.item-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.item-list li {
+  margin: 0 0 1.1rem;
+}
+
+.desc {
+  margin: 0.2rem 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+/* ---- Forms --------------------------------------------------------- */
+
+textarea {
+  width: 100%;
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  padding: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  line-height: 1.55;
+  resize: vertical;
+}
+
+textarea:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+  border-color: var(--accent);
+}
+
+button {
+  background: var(--action);
+  color: var(--bg);
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 0.5rem 1rem;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button:hover:not(:disabled) {
+  background: var(--accent);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+/* ---- Status text --------------------------------------------------- */
+
+.error {
+  color: var(--danger);
+}
+
+.help {
+  display: block;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+/* ---- Disclosure ---------------------------------------------------- */
+
+/* <details>/<summary> gives the toggle, keyboard support and correct
+   semantics for free; this just swaps the default disclosure marker for a
+   chevron that rotates when open. Clicking anywhere on the summary — chevron
+   or title — toggles it. */
+details.disclosure {
+  margin: 1rem 0;
+}
+
+details.disclosure > summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+details.disclosure > summary::-webkit-details-marker {
+  display: none;
+}
+
+details.disclosure > summary::before {
+  content: "\25B6";
+  font-size: 0.7em;
+  color: var(--muted);
+  transition: transform 0.15s ease;
+}
+
+details.disclosure[open] > summary::before {
+  transform: rotate(90deg);
+}

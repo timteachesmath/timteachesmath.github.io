@@ -1,35 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<title>Tim Cieplowski</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="site.css">
+  <meta charset="UTF-8">
+  <title>Tim Cieplowski</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="site.css">
 </head>
+
 <body>
   <script src="header.js" defer></script>
 
   <main class="page">
     <h1>Hi, I'm Tim.</h1>
-    <p class="lede">Senior Software Developer with 10+ years of experience building large-scale, accessible software. Full-stack developer and technical leader with a focus on user-centered design. Background as a practicing mathematics educator.</p>
+    <p class="lede">Senior Software Developer with 10+ years of experience building large-scale, accessible software.
+      Full-stack developer and technical leader with a focus on user-centered design. Background as a practicing
+      mathematics educator.</p>
 
     <h2 id="projects">Projects</h2>
     <div class="card-grid">
       <article class="card">
-        <h3>Color Puzzle Solver</h3>
-        <p>Finds the daily r/ColorPuzzleGame post on Reddit, scrapes the board, and solves it, using a search algorithm shared between a Python pipeline and the live page it publishes to.</p>
+        <h3><a class="card__stretched-link" href="https://timteachesmath.github.io/color-puzzle-solver/">Color Puzzle
+            Solver</a></h3>
+        <p>Finds the daily r/ColorPuzzleGame post on Reddit, scrapes the board, and solves it, using a search
+          algorithm shared between a Python pipeline and the live page it publishes to.</p>
         <div class="tags">Python · TypeScript · Playwright</div>
         <div class="card__links">
-          <a href="https://timteachesmath.github.io/color-puzzle-solver/">Live site</a>
-          <a class="link-external" href="https://github.com/timteachesmath/color-puzzle-solver" target="_blank" rel="noopener">Source</a>
+          <a class="btn" href="https://timteachesmath.github.io/color-puzzle-solver/">Live site</a>
+          <a class="btn btn--outline link-external" href="https://github.com/timteachesmath/color-puzzle-solver"
+            target="_blank" rel="noopener">Source</a>
         </div>
       </article>
       <a class="card" href="p5.html">
         <h3>Creative Coding</h3>
-        <p>Canvas animations and playable sketches in Processing.py/P5.js. Self-similar tilings, 180 frame checkerboard morphs, and playable mini games.</p>
+        <p>Canvas animations and playable sketches in Processing.py/P5.js. Self-similar tilings, 180 frame checkerboard
+          morphs, and playable mini games.</p>
         <div class="tags">P5.js · Canvas · Animation</div>
       </a>
     </div>
   </main>
 </body>
+
 </html>

@@ -32,6 +32,7 @@
         <a href="${HOME_URL}#projects">Projects</a>
         <a href="mailto:timteachesmath+portfolio@gmail.com">Email</a>
         <a href="https://linkedin.com/in/tim-cieplowski" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/timteachesmath" target="_blank" rel="noopener">GitHub</a>
       </nav>
     </div>
   `;

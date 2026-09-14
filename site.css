@@ -247,6 +247,17 @@ summary:focus-visible {
   color: var(--dim);
 }
 
+/* A card with more than one destination (a live site and its source) is a
+   plain container with a row of links, since links can't nest inside a
+   card that is itself one link. */
+.card__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+}
+
 /* ---- Lists of linked items with descriptions ----------------------- */
 
 .item-list {
